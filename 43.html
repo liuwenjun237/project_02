@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <script src="./jquery.js"></script>
+    <script src="./template-web.js"></script>
+    <script src="./43.js"></script>
+    <style>
+      .table th,
+      td {
+        text-align: center !important;
+      }
+      .action {
+        font-size: 20px;
+        line-height: 20px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 这里引入的css框架没有什么用 -->
+    <table class="table table-bordered table-hover"></table>
+    <script type="text/html" id="citys">
+      <tbody>
+        <tr>
+          <th colspan="3" class="action">热门城市列表</th>
+        </tr>
+        <tr>
+          <th>城市名称</th>
+          <th>城市简写</th>
+          <th>经纬度</th>
+        </tr>
+        {{each body}}
+        <tr>
+          <td>{{$value.label}}</td>
+          <td>{{$value.short}}</td>
+          <td>{{$value.value}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </script>
+  </body>
+</html>
